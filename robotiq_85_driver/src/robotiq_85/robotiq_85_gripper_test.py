@@ -70,7 +70,7 @@ class Robotiq85GripperTest:
     
     def _run_test(self):
         test_state = 0
-        r = rospy.Rate(1)
+        r = rospy.Rate(100)
         while not rospy.is_shutdown():
             ready = False
             while not (ready):
@@ -81,7 +81,7 @@ class Robotiq85GripperTest:
             if (0 == test_state):
                 for i in range(self._num_grippers):
                     self._gripper_cmd[i].position = 0.0
-                    self._gripper_cmd[i].speed = 0.02
+                    self._gripper_cmd[i].speed = 1
                     self._gripper_cmd[i].force = 100.0
                 test_state = 1
             elif (1 == test_state):
@@ -90,12 +90,12 @@ class Robotiq85GripperTest:
                     if (self._gripper_stat[i].is_moving):
                         success = False
                 if success:
-                    test_state = 2                 
+                    test_state = 5                 
 
             if (2 == test_state):
                 for i in range(self._num_grippers):
                     self._gripper_cmd[i].position = 0.085/3
-                    self._gripper_cmd[i].speed = 0.02
+                    self._gripper_cmd[i].speed = 1
                     self._gripper_cmd[i].force = 100.0
                 test_state = 3
             elif (3 == test_state):
@@ -108,7 +108,7 @@ class Robotiq85GripperTest:
             if (4 == test_state):
                 for i in range(self._num_grippers):
                     self._gripper_cmd[i].position = 0.085/2
-                    self._gripper_cmd[i].speed = 0.02
+                    self._gripper_cmd[i].speed = 1
                     self._gripper_cmd[i].force = 100.0
                 test_state = 5
             elif (5 == test_state):
@@ -121,7 +121,7 @@ class Robotiq85GripperTest:
             if (6 == test_state):
                 for i in range(self._num_grippers):
                     self._gripper_cmd[i].position = 0.085
-                    self._gripper_cmd[i].speed = 0.02
+                    self._gripper_cmd[i].speed = 1
                     self._gripper_cmd[i].force = 100.0
                 test_state = 7
             elif (7 == test_state):

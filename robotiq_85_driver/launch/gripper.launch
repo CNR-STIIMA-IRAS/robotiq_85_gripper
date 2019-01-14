@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="robotiq_85_driver" type="robotiq_85_driver" name="robotiq_85_driver" output="screen" />
+	<node pkg="robotiq_85_driver" type="server" name="server" output="screen" />
+</launch>

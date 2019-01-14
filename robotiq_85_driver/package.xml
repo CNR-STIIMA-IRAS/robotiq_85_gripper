@@ -10,9 +10,18 @@
     <buildtool_depend>catkin</buildtool_depend>
     
     <!-- Packages needed to run but not to build-->
+    <build_depend>robotiq_85_msgs</build_depend>
     <run_depend>robotiq_85_msgs</run_depend>
     <run_depend>robotiq_85_description</run_depend>
-
+    
+    <build_depend>roscpp</build_depend>
+    <run_depend>roscpp</run_depend>
+    <build_depend>rospy</build_depend>
+    <run_depend>rospy</run_depend>
+    <build_depend>std_srvs</build_depend>
+    <run_depend>std_srvs</run_depend>
+    
+    
 	<export>
 	</export>
 </package>

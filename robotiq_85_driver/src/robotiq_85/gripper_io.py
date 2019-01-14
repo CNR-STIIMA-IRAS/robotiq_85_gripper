@@ -96,8 +96,8 @@ class GripperIO:
         self.rACT = 1
         self.rGTO = 1
         self.rPR = int(np.clip((3.-230.)/0.085 * pos + 230., 0, 255))
-        self.rSP = int(np.clip(255./(0.1-0.013) * vel-0.013, 0, 255))
-        self.rFR = int(np.clip(255./(220.-5.) * force-5., 0, 255))
+        self.rSP = int(np.clip(255./(0.1-0.013) * (vel-0.013), 0, 255))
+        self.rFR = int(np.clip(255./(220.-5.) * (force-5.), 0, 255))
         self._update_cmd()
 
     def stop(self):

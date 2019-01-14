@@ -150,6 +150,7 @@ class Robotiq85Driver:
         dt = rospy.get_time() - self._prev_js_time[dev]
         self._prev_js_time[dev] = rospy.get_time()
         js.velocity = [(pos-self._prev_js_pos[dev])/dt]
+        js.effort = [self._gripper.get_current(dev)]
         self._prev_js_pos[dev] = pos
         return js
         
