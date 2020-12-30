@@ -21,7 +21,7 @@ bool serverCallback(std_srvs::SetBool::Request& req, std_srvs::SetBool::Response
   pub.publish(msg);
   res.success=true;
   return true;
-};
+}
 
 int main(int argc, char **argv)
 {
